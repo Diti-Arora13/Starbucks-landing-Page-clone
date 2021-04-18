@@ -10,16 +10,26 @@ body{
     font-family: sans-serif;
     width: 100vw;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .the-nav-bar{
     display: block;
-    box-shadow: 0 1px 3px rgba(0,0,0,.1),0 2px 2px rgba(0,0,0,.06),0 0 2px rgba(0,0,0,.07);
+    
 }
 
 .nav-bar{
+    position: relative;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1),0 2px 2px rgba(0,0,0,.06),0 0 2px rgba(0,0,0,.07);
+    height: 100px;
+}
+
+.lav-links{
+    margin-left: 100px;
+    margin-top: -20px;
 }
 
 .right-side-nav{
@@ -50,11 +60,32 @@ body{
     color: #006341;
 }
 
+.two{
+    position: absolute;
+    top: 33px;
+    padding-left: 200px;
+}
+
+.three{
+    position: absolute;
+    top: 33px;
+    padding-left: 300px;
+}
+
+.find-a-store-div{
+    display: flex;
+}
+
 .the-pin-svg{
     margin: 30px -30px 30px 30px;
 }
 
+.the-pin-svg:hover{
+    fill: #006341;
+}
+
 .find-store-text{
+    cursor: pointer;
     color: #000;
     font-family: sans-serif;
     font-weight: bolder;
@@ -62,7 +93,12 @@ body{
     padding: 40px;
 }
 
+.find-store-text:hover{
+    color: #006341;
+}
+
 .left-nav-buttons{
+    cursor: pointer;
     height: 40px;
     width: 100px;
     margin: 30px 10px 20px 0px; 
@@ -72,6 +108,16 @@ body{
     font-family: sans-serif;
     font-weight: bolder;
     font-size: 14px;
+    transition: .3s;
+}
+
+.left-nav-buttons:hover{
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+.left-nav-buttons:nth-child(2):hover{
+    border: 1px solid black;
+    background-color: rgba(0, 0, 0, 0.664);
 }
 
 .join-now{
@@ -97,53 +143,43 @@ body{
 
 .drk-grn-sec{
     display: flex;
-    background: #1f3933;
-    color: #fff;
+    background: rgb(212, 233, 226);
     margin-top: 30px;
-    height: 270px;
+    height: 470px;
 }
 
 .drk-grn-sec-img{
     display: inline;
     height: auto;
-    width: 70%;
-    margin-left: 200px;
-    margin-top: 60px;
+    width: 90%;
+    margin-left: 50px;
+    margin-top: -40px;
 }
 
 .drk-grn-heading{
     font-size: 23px;
-    padding: 30px;
-    margin-left: 100px;
-    width: 500px;
-    font-weight: normal;
-}
-
-.drk-grn-sub-heading{
-    font-size: 20px;
-    font-weight: normal;
+    padding: 70px;
+    margin-top: 70px;
+    margin-right: 100px;
     width: 600px;
-    padding: 10px;
-    padding-left: 100px;
+    font-weight: normal;
+    color: rgb(0, 98, 65);
     text-align: center;
-    line-height: 30px;
+    line-height: 1.7;
 }
 
-.drk-grn-sml-txt{
-    font-size: 10px;
-}
 
 .drk-grn-join-btn{
     cursor: pointer;
-    border: 2px solid #fff;
-    color: #fff;
+    border: 1px solid rgb(0, 130, 72);
+    color: rgb(0, 130, 72);
     background: none;
     border-radius: 30px;
     font-family: sans-serif;
     font-weight: bolder;
     font-size: 16px;
     padding: 10px;
-    margin: 20px 20px 20px 250px;
+    margin: -20px 20px 20px 250px;
     transition: .2s;
 }
 
@@ -355,7 +391,7 @@ body{
 
 .point{
     color: rgb(105, 103, 103);
-    padding: 20px;
+    padding: 11px;
     cursor: pointer;
 }
 
@@ -365,12 +401,13 @@ body{
 
 .sec{
     margin-left: 30px;
+    margin-top: 20px;
 }
 
 .footer-heading{
     font-size: 19px;
     font-weight: normal;
-    padding: 20px;
+    padding: 10px;
 }
 
 .link-aftr-footer{
@@ -388,6 +425,7 @@ body{
 }
 
 .icon{
+    cursor: pointer;
     height: 40px;
     width: 40px;
     margin-right: 20px;
@@ -400,14 +438,16 @@ body{
 
 .links-aftr-icons{
     margin-left: 40px;
+    display: flex;
 }
 
 .link{
+    font-family: Roboto;
     color: #000;
     text-decoration: none;
     margin-right: 10px;
     margin-left: 10px;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 16px;
 }
 
@@ -419,3 +459,108 @@ body{
     color: #707070;
     padding: 40px;
 }
+
+.burgur{
+   visibility: hidden;
+}
+
+.burgur div{
+    width: 25px;
+    height: 2px;
+    background: #707070;
+    margin: 3px;
+}
+
+/* accordion */
+h1 {
+    margin: 2rem 0;
+  }
+ 
+ .accordion {
+   max-width: 1000px;
+   margin: 2rem auto;
+ }
+
+ .accordion-item {
+   font-family: roboto;
+   color: #111;
+   margin: 1rem 30px;
+   border-radius: 0.5rem;
+   width: 90vw;
+  }
+
+ .accordion-item-header {
+   padding: 0.5rem 3rem 0.5rem 1rem;
+   min-height: 3.5rem;
+   line-height: 1.25rem;
+   display: flex;
+   align-items: center;
+   position: relative;
+   cursor: pointer;
+   font-size: 20px;
+ }
+
+ .accordion-item-header::after {
+   content: "\003C";
+   font-size: 2rem;
+   font-weight: 400;
+   position: absolute;
+   right: 1rem;
+   transform: rotate(270deg);
+ }
+
+ .accordion-item-header.active::after {
+   content: "\003C";
+   transform: rotate(90deg);
+ }
+
+ .accordion-item-body {
+   max-height: 0;
+   overflow: hidden;
+   transition: max-height 0.2s ease-out;
+ }
+
+ .ac-point{
+    color: rgb(105, 103, 103);
+    padding: 30px;
+    cursor: pointer;
+ }
+
+.accordion{
+    display: none;
+}
+
+@keyframes hoverBg{
+  0%{
+      transform: scale(0);
+  }
+
+  20%{
+      transform: scale(.2);
+  }
+
+  50%{
+    transform: scale(.5);
+}
+
+  100%{
+      transform: scale(1);
+  }
+}
+
+.icon:hover::before{
+    content: "";
+    height: 100px;
+    width: 100px;
+    background: rgba(240, 7, 7, 0.753);
+    position: absolute;
+    border-radius: 50%;
+    animation: hoverBg  .2s ease-in ;
+}
+
+ 
+
+ .unseen-div{
+   visibility: hidden;
+ }
+ 
